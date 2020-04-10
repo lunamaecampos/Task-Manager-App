@@ -26,16 +26,3 @@ const router = new express.Router()
 app.listen(port, ()=>{
   console.log(`Server is up on port ${port}`);
 })
-
-const Task = require('./models/task');
-const User = require('./models/user');
-const main = async () => {
-  // const task = await Task.findById('5e900d795daf4d0635c27c9a');
-  // await task.populate('owner').execPopulate();
-  // console.log(task.owner);
-  const user = await User.findById('5e900d5b5daf4d0635c27c97');
-  await user.populate('tasks').execPopulate();
-  console.log(user.tasks);
-
-}
-main();
